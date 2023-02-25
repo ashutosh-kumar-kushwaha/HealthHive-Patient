@@ -224,7 +224,7 @@ class SelfDiagnosisFragment : Fragment(), CheckboxClickListener {
             }
             val bundle = Bundle()
             bundle.putStringArrayList("list", list)
-//            findNavController().navigate(R.id.self)
+            findNavController().navigate(R.id.action_selfDiagnosisFragment_to_predictionFragment, bundle)
         }
 
         return binding.root

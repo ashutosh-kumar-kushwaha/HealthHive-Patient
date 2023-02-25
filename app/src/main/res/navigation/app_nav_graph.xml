@@ -22,11 +22,20 @@
     <fragment
         android:id="@+id/selfDiagnosisFragment"
         android:name="ashutosh.healthhive.patient.ui.selfDiagnosis.SelfDiagnosisFragment"
-        android:label="SelfDiagnosisFragment" /><fragment
+        android:label="SelfDiagnosisFragment" >
+        <action
+            android:id="@+id/action_selfDiagnosisFragment_to_predictionFragment"
+            app:destination="@id/predictionFragment" />
+    </fragment><fragment
         android:id="@+id/accountFragment"
         android:name="ashutosh.healthhive.patient.ui.selfDiagnosis.SelfDiagnosisFragment"
         android:label="SelfDiagnosisFragment" /><fragment
         android:id="@+id/recordFragment"
         android:name="ashutosh.healthhive.patient.ui.selfDiagnosis.SelfDiagnosisFragment"
         android:label="SelfDiagnosisFragment" />
+    <fragment
+        android:id="@+id/predictionFragment"
+        android:name="ashutosh.healthhive.patient.ui.prediction.PredictionFragment"
+        android:label="fragment_prediction"
+        tools:layout="@layout/fragment_prediction" />
 </navigation>
