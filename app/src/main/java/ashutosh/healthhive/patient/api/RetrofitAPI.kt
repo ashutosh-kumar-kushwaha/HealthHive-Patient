@@ -1,13 +1,21 @@
 package ashutosh.healthhive.patient.api
 
+import ashutosh.healthhive.patient.models.LoginRequest
+import ashutosh.healthhive.patient.models.LoginResponse
+import retrofit2.Response
+import retrofit2.http.Body
+import retrofit2.http.Headers
+import retrofit2.http.POST
+import retrofit2.http.Query
+
 interface RetrofitAPI {
 
     //auth
 
-//    @Headers("isAuthorized: false")
-//    @POST("api/auth/loginMerchant")
-//    suspend fun login(@Body loginRequest: LoginRequest) : Response<LoginResponse>
-//
+    @Headers("isAuthorized: false")
+    @POST("api/auth/loginMerchant")
+    suspend fun login(@Body loginRequest: LoginRequest) : Response<LoginResponse>
+
 //    @Headers("isAuthorized: true")
 //    @GET("products/getFAQs/{productId}?pageNumber=0&pageSize=100")
 //    suspend fun getQuestionsAnswers(@Path("productId") productId: Int) : Response<QuestionAnswerResponse>
@@ -36,9 +44,9 @@ interface RetrofitAPI {
 //    @POST("api/auth/signupUser/merchant")
 //    suspend fun signUp(@Body signUpRequest: SignUpRequest) : Response<DefaultResponse>
 //
-//    @Headers("isAuthorized: false")
-//    @POST("api/auth/signGoogleMerchant")
-//    suspend fun signGoogle(@Query("TokenG") token : String) : Response<LoginResponse>
+    @Headers("isAuthorized: false")
+    @POST("api/auth/signGoogleMerchant")
+    suspend fun signGoogle(@Query("TokenG") token : String) : Response<LoginResponse>
 //
 //    @Headers("isAuthorized: false")
 //    @GET("api/auth/regenerateToken")
