@@ -1,7 +1,6 @@
 package ashutosh.healthhive.patient.api
 
-import ashutosh.healthhive.patient.models.LoginRequest
-import ashutosh.healthhive.patient.models.LoginResponse
+import ashutosh.healthhive.patient.models.*
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Headers
@@ -20,9 +19,9 @@ interface RetrofitAPI {
 //    @GET("products/getFAQs/{productId}?pageNumber=0&pageSize=100")
 //    suspend fun getQuestionsAnswers(@Path("productId") productId: Int) : Response<QuestionAnswerResponse>
 //
-//    @Headers("isAuthorized: false")
-//    @POST("api/auth/signupEmail/merchant")
-//    suspend fun signUpEmail(@Body email : Email) : Response<DefaultResponse>
+    @Headers("isAuthorized: false")
+    @POST("api/auth/signupEmail/merchant")
+    suspend fun signUpEmail(@Body email : Email) : Response<DefaultResponse>
 //
 //    @Headers("isAuthorized: false")
 //    @POST("api/auth/forget")
@@ -36,9 +35,9 @@ interface RetrofitAPI {
 //    @POST("api/auth/resetpass")
 //    suspend fun resetPassword(@Body resetPasswordRequest: ResetPasswordRequest) : Response<DefaultResponse>
 //
-//    @Headers("isAuthorized: false")
-//    @POST("api/auth/verifyotp")
-//    suspend fun verifySignUpOtp(@Body verifySignUpOtpRequest: VerifyOtpRequest) : Response<DefaultResponse>
+    @Headers("isAuthorized: false")
+    @POST("api/auth/verifyotp")
+    suspend fun verifySignUpOtp(@Body verifySignUpOtpRequest: VerifyOtpRequest) : Response<DefaultResponse>
 //
 //    @Headers("isAuthorized: false")
 //    @POST("api/auth/signupUser/merchant")
