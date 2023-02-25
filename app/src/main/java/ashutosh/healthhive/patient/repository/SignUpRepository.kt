@@ -13,11 +13,11 @@ class SignUpRepository @Inject constructor(private val retrofitAPI: RetrofitAPI)
 
     val signUpResponseLiveData = SingleLiveEvent<NetworkResult<LoginResponse>>()
 
-    suspend fun signUp(email : String, otp : String, firstName : String, lastName : String, gender : String, password : String){
+    suspend fun signUp(dob: String, bloodGroup: String, email : String, otp : String, firstName : String, lastName : String, gender : String, password : String){
         signUpResponseLiveData.value = NetworkResult.Loading()
         try {
-            val response = retrofitAPI.signUp(SignUpRequest(email, otp, firstName, lastName, gender, password))
-            Log.d("Ashu", SignUpRequest(email, otp, firstName, lastName, gender, password).toString())
+            val response = retrofitAPI.signUp(SignUpRequest(dob, bloodGroup, email, firstName, gender, lastName, otp, password))
+//            Log.d("Ashu", .toString())
             when(response.code()){
                 200 -> {
                     login(email, password)
@@ -30,6 +30,7 @@ class SignUpRepository @Inject constructor(private val retrofitAPI: RetrofitAPI)
         }
         catch (e : Exception){
             signUpResponseLiveData.value = NetworkResult.Error(-1, e.message)
+            e.printStackTrace()
         }
     }
 
@@ -55,6 +56,7 @@ class SignUpRepository @Inject constructor(private val retrofitAPI: RetrofitAPI)
             }
         } catch (e: Exception) {
             signUpResponseLiveData.value = NetworkResult.Error(-1, e.message)
+            e.printStackTrace()
         }
     }
 

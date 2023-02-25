@@ -128,7 +128,7 @@ class LoginFragment : Fragment() {
                     lifecycleScope.launch {
                         val job = lifecycleScope.launch {
                             val dataStoreManager = DataStoreManager(requireContext())
-                            dataStoreManager.storeLogInInfo(LogInInfo(it.data?.accessToken, it.data?.refreshToken, true, it.data?.firstname, it.data?.lastname, it.data?.roles?.get(0)?.name, it.data?.email))
+                            dataStoreManager.storeLogInInfo(LogInInfo(it.data?.accessToken, it.data?.refreshToken, true, it.data?.firstname, it.data?.lastname, it.data?.roles?.get(0)?.name, it.data?.email ,it.data?.userId))
                         }
                         job.join()
                     }

@@ -27,8 +27,6 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white">
 
-
-
                 <TextView
                     android:id="@+id/whatIsYourNameTxtVw"
                     android:layout_width="0dp"
@@ -117,30 +115,143 @@
                     android:layout_marginStart="@dimen/dp_24"
                     android:layout_marginTop="@dimen/dp_16"
                     android:layout_marginEnd="@dimen/dp_24"
+                    android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/selectGenderTxtVw">
 
-                    <RadioButton
+                    <com.google.android.material.radiobutton.MaterialRadioButton
                         android:id="@+id/manRBtn"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:text="Man"
+                        android:background="@drawable/checkbox_bg"
                         android:fontFamily="@font/montserrat"
                         android:textSize="@dimen/sp_14"
-                        android:textColor=""
+                        android:letterSpacing="0.05"
+                        android:gravity="center"
+                        android:textColor="@color/checkbox_text_color"
+                        android:button="@null"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/dp_12" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/womanRBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Woman"
+                        android:background="@drawable/checkbox_bg"
+                        android:fontFamily="@font/montserrat"
+                        android:textSize="@dimen/sp_14"
+                        android:letterSpacing="0.05"
+                        android:gravity="center"
+                        android:textColor="@color/checkbox_text_color"
+                        android:button="@null"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/dp_12"/>
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/otherRBtn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Other"
+                        android:background="@drawable/checkbox_bg"
+                        android:fontFamily="@font/montserrat"
+                        android:textSize="@dimen/sp_14"
+                        android:letterSpacing="0.05"
+                        android:gravity="center"
+                        android:textColor="@color/checkbox_text_color"
                         android:button="@null"
                         android:layout_weight="1" />
-
-
-                    <ImageView
-                        android:id="@+id/womanImgVw"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/woman" />
                 </RadioGroup>
 
+                <TextView
+                    android:id="@+id/whenWereYouBornTxtVw"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_24"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_24"
+                    android:fontFamily="@font/montserrat"
+                    android:text="When were you born?"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/genderLL"/>
+
+                <LinearLayout
+                    android:id="@+id/dobBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_48"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@drawable/checkbox_bg_unchecked"
+                    android:layout_marginEnd="@dimen/dp_24"
+                    android:layout_marginStart="@dimen/dp_24"
+                    android:layout_marginTop="@dimen/dp_12"
+                    app:layout_constraintTop_toBottomOf="@id/whenWereYouBornTxtVw">
+
+                    <TextView
+                        android:id="@+id/dayTxtVw"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Day"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat"
+                        android:textSize="@dimen/sp_14"
+                        android:letterSpacing="0.05"
+                        android:textColor="@color/color4"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/monthTxtVw"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Month"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat"
+                        android:textSize="@dimen/sp_14"
+                        android:letterSpacing="0.05"
+                        android:textColor="@color/color4"
+                        android:layout_weight="1"/>
+                    <TextView
+                        android:id="@+id/yearTxtVw"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:text="Year"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat"
+                        android:textSize="@dimen/sp_14"
+                        android:letterSpacing="0.05"
+                        android:textColor="@color/color4"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/bloodGroupTxtVw"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_24"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginEnd="@dimen/dp_24"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Blood Group"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dobBtn"/>
+                
+                <Spinner
+                    android:id="@+id/bloodGrpSpinner"
+                    android:layout_width="@dimen/dp_92"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_marginStart="@dimen/dp_24"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:background="@drawable/checkbox_bg_unchecked"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bloodGroupTxtVw"/>
 
                 <LinearLayout
                     android:id="@+id/setupPasswordTxtVw"
@@ -151,7 +262,7 @@
                     android:layout_marginEnd="@dimen/dp_24"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/genderLL">
+                    app:layout_constraintTop_toBottomOf="@id/bloodGrpSpinner">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -265,18 +376,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/password2Layout" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/dp_24"
-                    android:layout_marginTop="@dimen/dp_72"
-                    android:layout_marginBottom="@dimen/dp_24"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/shopit_black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/createAccountBtn" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

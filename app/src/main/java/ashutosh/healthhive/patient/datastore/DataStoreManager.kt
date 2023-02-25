@@ -3,7 +3,14 @@ package ashutosh.healthhive.patient.datastore
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import ashutosh.healthhive.patient.models.LogInInfo
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.runBlocking
+import kotlin.math.log
 
 private val Context.dataStore : DataStore<Preferences> by preferencesDataStore("dataStore")
 
@@ -17,6 +24,7 @@ class DataStoreManager(private val context : Context) {
         val lastName = stringPreferencesKey("lastName")
         val role = stringPreferencesKey("role")
         val email = stringPreferencesKey("email")
+        val userId = stringPreferencesKey("userId")
     }
 
     suspend fun storeLogInInfo(logInInfo: LogInInfo){
@@ -28,6 +36,7 @@ class DataStoreManager(private val context : Context) {
             it[lastName] = logInInfo.lastName!!
             it[role] = logInInfo.role!!
             it[email] = logInInfo.email!!
+            it[userId] = logInInfo.userId!!
         }
     }
 
@@ -39,7 +48,8 @@ class DataStoreManager(private val context : Context) {
             firstName = it[firstName]?:"",
             lastName = it[lastName]?:"",
             role = it[role]?:"",
-            email = it[email]?:""
+            email = it[email]?:"",
+            userId = it[userId]
         )
     }
 
@@ -93,6 +103,6 @@ class DataStoreManager(private val context : Context) {
     }
 
     suspend fun deleteLogInInfo(){
-        storeLogInInfo(LogInInfo("", "", false, "", "", "", ""))
+        storeLogInInfo(LogInInfo("", "", false, "", "", "", "", ""))
     }
 }

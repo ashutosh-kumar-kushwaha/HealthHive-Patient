@@ -2,9 +2,10 @@ package ashutosh.healthhive.patient.models
 
 data class LoginResponse(
     val accessToken: String,
-    val refreshToken: String,
+    val email: String,
     val firstname: String,
     val lastname: String,
-    val roles: List<Role>,
-    val email: String
+    val refreshToken: String,
+    val roles: List<RoleX>,
+    val userId: String
 )
