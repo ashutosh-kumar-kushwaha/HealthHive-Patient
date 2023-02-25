@@ -16,7 +16,13 @@
         android:label="fragment_consulation"
         tools:layout="@layout/fragment_consulation" />
     <fragment
-        android:id="@+id/selfDiagnosisFragment2"
+        android:id="@+id/selfDiagnosisFragment"
+        android:name="ashutosh.healthhive.patient.ui.SelfDiagnosisFragment"
+        android:label="SelfDiagnosisFragment" /><fragment
+        android:id="@+id/accountFragment"
+        android:name="ashutosh.healthhive.patient.ui.SelfDiagnosisFragment"
+        android:label="SelfDiagnosisFragment" /><fragment
+        android:id="@+id/recordFragment"
         android:name="ashutosh.healthhive.patient.ui.SelfDiagnosisFragment"
         android:label="SelfDiagnosisFragment" />
 </navigation>
