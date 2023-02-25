@@ -7,11 +7,11 @@ import ashutosh.healthhive.patient.models.PredictRequest
 import ashutosh.healthhive.patient.models.PredictResponse
 import javax.inject.Inject
 
-class SelfDiagnosisRepository @Inject constructor(private val mlApis: MLApis) {
+class PredictionRepository @Inject constructor(private val mlApis: MLApis) {
 
     val predictResponse = SingleLiveEvent<NetworkResult<PredictResponse>>()
 
-    suspend fun predictResponse(predictRequest: PredictRequest){
+    suspend fun predict(predictRequest: PredictRequest){
         predictResponse.value = NetworkResult.Loading()
         try {
             val response = mlApis.predict(predictRequest)

@@ -17,7 +17,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ashutosh.healthhive.patient.CheckboxClickListener
 import ashutosh.healthhive.patient.R
-import ashutosh.healthhive.patient.SymptomRecyclerAdapter
+import ashutosh.healthhive.patient.adapters.SymptomRecyclerAdapter
 import ashutosh.healthhive.patient.databinding.FragmentSelfDiagnosisBinding
 import ashutosh.healthhive.patient.models.Symptom
 import java.lang.reflect.Field

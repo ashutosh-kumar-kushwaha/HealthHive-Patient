@@ -1,12 +1,11 @@
-package ashutosh.healthhive.patient
+package ashutosh.healthhive.patient.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.CompoundButton
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import ashutosh.healthhive.patient.CheckboxClickListener
 import ashutosh.healthhive.patient.databinding.SymptomItemBinding
 import ashutosh.healthhive.patient.models.Symptom
 
