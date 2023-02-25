@@ -1,8 +1,7 @@
-package ashutosh.healthhive.patient.ui
+package ashutosh.healthhive.patient.ui.selfDiagnosis
 
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,15 +13,13 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ashutosh.healthhive.patient.CheckboxClickListener
 import ashutosh.healthhive.patient.R
 import ashutosh.healthhive.patient.SymptomRecyclerAdapter
 import ashutosh.healthhive.patient.databinding.FragmentSelfDiagnosisBinding
-import ashutosh.healthhive.patient.models.PredictRequest
 import ashutosh.healthhive.patient.models.Symptom
-import com.google.gson.Gson
 import java.lang.reflect.Field
 
 class SelfDiagnosisFragment : Fragment(), CheckboxClickListener {
@@ -227,7 +224,7 @@ class SelfDiagnosisFragment : Fragment(), CheckboxClickListener {
             }
             val bundle = Bundle()
             bundle.putStringArrayList("list", list)
-
+//            findNavController().navigate(R.id.self)
         }
 
         return binding.root

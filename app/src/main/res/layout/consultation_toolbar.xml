@@ -8,6 +8,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <ImageView
+        android:id="@+id/backBtn"
         android:layout_width="@dimen/dp_26"
         android:layout_height="@dimen/dp_24"
         android:padding="@dimen/dp_5"
@@ -20,6 +21,6 @@
         android:textSize="@dimen/sp_16"
         android:textColor="@color/black"
         android:letterSpacing="0.05"
-        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_28"
         android:textFontWeight="600"/>
 </Toolbar>

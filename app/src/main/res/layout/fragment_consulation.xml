@@ -1,53 +1,69 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="ashutosh.healthhive.patient.ui.consultation.ConsultationFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <include android:id="@+id/toolbar" layout="@layout/consultation_toolbar"/>
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/selfDiagnosisBtn"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/dp_267"
-        android:text="Self Diagnosis"
-        android:textColor="@color/color4"
-        android:fontFamily="@font/montserrat"
-        android:textSize="@dimen/sp_16"
-        android:letterSpacing="0.05"
-        android:textFontWeight="600"
-        android:backgroundTint="@color/white"
-        app:strokeColor="@color/color5"
-        app:strokeWidth="@dimen/dp_1"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:cornerRadius="@dimen/dp_8"
-        android:layout_marginStart="@dimen/dp_24"
-        android:layout_marginEnd="@dimen/dp_24"
-        android:layout_marginTop="@dimen/dp_16"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/consultWithDoctorBtn"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/dp_267"
-        android:text="Consult with a doctor"
-        android:textColor="@color/color4"
-        android:fontFamily="@font/montserrat"
-        android:textSize="@dimen/sp_16"
-        android:letterSpacing="0.05"
-        android:textFontWeight="600"
-        android:backgroundTint="@color/white"
-        app:strokeColor="@color/color5"
-        app:strokeWidth="@dimen/dp_1"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:cornerRadius="@dimen/dp_8"
-        android:layout_marginStart="@dimen/dp_24"
-        android:layout_marginTop="@dimen/dp_24"
-        android:layout_marginEnd="@dimen/dp_24"
-        app:layout_constraintTop_toBottomOf="@id/selfDiagnosisBtn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context="ashutosh.healthhive.patient.ui.consultation.ConsultationFragment">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/consultation_toolbar" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/selfDiagnosisBtn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_267"
+                android:layout_marginStart="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_24"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/montserrat"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:letterSpacing="0.05"
+                android:text="Self Diagnosis"
+                android:textColor="@color/color4"
+                android:textFontWeight="600"
+                android:textSize="@dimen/sp_16"
+                app:cornerRadius="@dimen/dp_8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                app:strokeColor="@color/color5"
+                app:strokeWidth="@dimen/dp_1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/consultWithDoctorBtn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_267"
+                android:layout_marginStart="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginEnd="@dimen/dp_24"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/montserrat"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:letterSpacing="0.05"
+                android:text="Consult with a doctor"
+                android:textColor="@color/color4"
+                android:textFontWeight="600"
+                android:textSize="@dimen/sp_16"
+                app:cornerRadius="@dimen/dp_8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/selfDiagnosisBtn"
+                app:strokeColor="@color/color5"
+                app:strokeWidth="@dimen/dp_1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>
