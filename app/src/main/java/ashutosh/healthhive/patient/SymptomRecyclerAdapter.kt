@@ -14,7 +14,6 @@ class SymptomRecyclerAdapter(val symptomList: List<Symptom>, private val checkbo
     Filterable {
 
     private var filteredList = symptomList
-//    val selectedItems = ArrayList<Symptom>()
 
     inner class ViewHolder(private val binding: SymptomItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(symptom: Symptom){
@@ -25,15 +24,6 @@ class SymptomRecyclerAdapter(val symptomList: List<Symptom>, private val checkbo
             binding.checkbox.setOnClickListener {
                 checkboxClickListener.onClick(!symptom.isPicked, symptom.id-1)
             }
-
-//            binding.checkbox.setOnCheckedChangeListener { _, isChecked ->
-//                if (isChecked) {
-//                    selectedItems.add(symptom)
-//                    Log.d("Ashu", "${symptom.name} $adapterPosition")
-//                } else {
-//                    selectedItems.remove(symptom)
-//                }
-//            }
         }
     }
 

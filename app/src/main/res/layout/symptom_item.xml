@@ -16,6 +16,7 @@
         android:textColor="@color/checkbox_text_color"
         android:textFontWeight="600"
         android:background="@drawable/checkbox_bg"
+        android:layout_marginBottom="@dimen/dp_16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/selectProblemTxtVw" />

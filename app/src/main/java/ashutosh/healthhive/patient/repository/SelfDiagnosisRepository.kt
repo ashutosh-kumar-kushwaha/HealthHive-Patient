@@ -12,7 +12,7 @@ class SelfDiagnosisRepository @Inject constructor(private val mlApis: MLApis) {
     val predictResponse = SingleLiveEvent<NetworkResult<PredictResponse>>()
 
     suspend fun predictResponse(predictRequest: PredictRequest){
-        val diseasesResponse = NetworkResult.Loading()
+        predictResponse.value = NetworkResult.Loading()
         try {
             val response = mlApis.predict(predictRequest)
             when (response.code()) {
