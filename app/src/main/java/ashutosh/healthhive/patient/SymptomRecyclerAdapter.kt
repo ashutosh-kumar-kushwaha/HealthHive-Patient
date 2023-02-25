@@ -2,31 +2,38 @@ package ashutosh.healthhive.patient
 
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import android.widget.CompoundButton
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import ashutosh.healthhive.patient.databinding.SymptomItemBinding
 import ashutosh.healthhive.patient.models.Symptom
 
-class SymptomRecyclerAdapter(val symptomList: List<Symptom>) : RecyclerView.Adapter<SymptomRecyclerAdapter.ViewHolder>(),
+class SymptomRecyclerAdapter(val symptomList: List<Symptom>, private val checkboxClickListener: CheckboxClickListener) : RecyclerView.Adapter<SymptomRecyclerAdapter.ViewHolder>(),
     Filterable {
 
     private var filteredList = symptomList
-    private val selectedItems = ArrayList<Symptom>()
+//    val selectedItems = ArrayList<Symptom>()
 
     inner class ViewHolder(private val binding: SymptomItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(symptom: Symptom){
             binding.checkbox.text = symptom.name
-            binding.checkbox.isChecked = selectedItems.contains(symptom)
-            binding.checkbox.setOnCheckedChangeListener { _, isChecked ->
-                if (isChecked) {
-                    selectedItems.add(symptom)
-                } else {
-                    selectedItems.remove(symptom)
-                }
+            binding.checkbox
+            binding.checkbox.isChecked = symptom.isPicked
+
+            binding.checkbox.setOnClickListener {
+                checkboxClickListener.onClick(!symptom.isPicked, symptom.id-1)
             }
+
+//            binding.checkbox.setOnCheckedChangeListener { _, isChecked ->
+//                if (isChecked) {
+//                    selectedItems.add(symptom)
+//                    Log.d("Ashu", "${symptom.name} $adapterPosition")
+//                } else {
+//                    selectedItems.remove(symptom)
+//                }
+//            }
         }
     }
 
@@ -57,10 +64,6 @@ class SymptomRecyclerAdapter(val symptomList: List<Symptom>) : RecyclerView.Adap
 
                 results.count = filtered.size
                 results.values = filtered
-
-                Log.d("Ashu" , results.toString())
-
-//                publishResults(constraint, results)
 
                 return results
             }

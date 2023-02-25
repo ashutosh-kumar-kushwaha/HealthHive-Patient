@@ -40,7 +40,7 @@ class LoginRepository @Inject constructor(private val retrofitAPI: RetrofitAPI) 
     }
 
     suspend fun signGoogle(token : String){
-        Log.d("Ashu", token)
+//        Log.d("Ashu", token)
         loginResponseLiveData.value = NetworkResult.Loading()
         try{
             val response = retrofitAPI.signGoogle(token)

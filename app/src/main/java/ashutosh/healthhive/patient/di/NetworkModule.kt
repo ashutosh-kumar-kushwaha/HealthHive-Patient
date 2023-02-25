@@ -5,6 +5,7 @@ import ashutosh.healthhive.patient.Constants
 import ashutosh.healthhive.patient.datastore.DataStoreManager
 import ashutosh.healthhive.patient.api.AuthAuthenticator
 import ashutosh.healthhive.patient.api.AuthInterceptor
+import ashutosh.healthhive.patient.api.MLApis
 import ashutosh.healthhive.patient.api.RetrofitAPI
 import dagger.Module
 import dagger.Provides
@@ -15,6 +16,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -30,6 +32,9 @@ class NetworkModule {
     @Provides
     fun providesRetrofitAPI(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): RetrofitAPI =  retrofitBuilder.client(okHttpClient).build().create(RetrofitAPI::class.java)
 
+    @Singleton
+    @Provides
+    fun providesMLApis(okHttpClient: OkHttpClient) : MLApis = Retrofit.Builder().baseUrl(Constants.predictUrl).addConverterFactory(GsonConverterFactory.create()).client(okHttpClient).build().create(MLApis::class.java)
 
     @Singleton
     @Provides
