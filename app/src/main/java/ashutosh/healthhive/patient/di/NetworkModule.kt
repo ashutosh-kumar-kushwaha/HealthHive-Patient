@@ -2,11 +2,8 @@ package ashutosh.healthhive.patient.di
 
 import android.content.Context
 import ashutosh.healthhive.patient.Constants
+import ashutosh.healthhive.patient.api.*
 import ashutosh.healthhive.patient.datastore.DataStoreManager
-import ashutosh.healthhive.patient.api.AuthAuthenticator
-import ashutosh.healthhive.patient.api.AuthInterceptor
-import ashutosh.healthhive.patient.api.MLApis
-import ashutosh.healthhive.patient.api.RetrofitAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -35,6 +32,11 @@ class NetworkModule {
     @Singleton
     @Provides
     fun providesMLApis(okHttpClient: OkHttpClient) : MLApis = Retrofit.Builder().baseUrl(Constants.predictUrl).addConverterFactory(GsonConverterFactory.create()).client(okHttpClient).build().create(MLApis::class.java)
+
+    @Singleton
+    @Provides
+    fun providesBlockchainApis(okHttpClient: OkHttpClient) : BlockchainAPI = Retrofit.Builder().baseUrl(Constants.blockchainUrl).addConverterFactory(GsonConverterFactory.create()).client(okHttpClient).build().create(BlockchainAPI::class.java)
+
 
     @Singleton
     @Provides
