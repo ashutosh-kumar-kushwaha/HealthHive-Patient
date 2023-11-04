@@ -19,7 +19,7 @@ class RecordsRecyclerAdapter(private val recordList : List<Record>) : RecyclerVi
             binding.symptomsRecyclerView.adapter = TextRecyclerView(record.symptoms.split(",").toTypedArray().toList())
             binding.symptomsRecyclerView.layoutManager = GridLayoutManager(binding.root.context, 2)
             binding.descriptionTxtVw.text = record.description
-            binding.prescriptionsRecyclerView.adapter = ImageAdapter(record.prescriptionUrls)
+            binding.prescriptionsRecyclerView.adapter = ImageRecyclerAdapter(record.prescriptionUrls)
             binding.prescriptionsRecyclerView.layoutManager = LinearLayoutManager(binding.root.context, LinearLayoutManager.HORIZONTAL, false)
         }
     }

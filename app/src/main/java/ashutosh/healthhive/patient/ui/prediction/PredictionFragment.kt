@@ -47,8 +47,8 @@ class PredictionFragment : Fragment() {
 
         if(arguments?.getStringArrayList("list")!=null){
             predictionViewModel.symptomsList = arguments?.getStringArrayList("list")!!
-            binding.symptomsRecyclerView.adapter = TextRecyclerView(predictionViewModel.symptomsList)
-            binding.precautionRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+//            binding.symptomsRecyclerView.adapter = TextRecyclerView(predictionViewModel.symptomsList)
+//            binding.symptomsRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }
 
         predictionViewModel.predict()
@@ -70,7 +70,6 @@ class PredictionFragment : Fragment() {
                     binding.descriptionTxtVw.text = it.data?.Description
                     binding.precautionRecyclerView.adapter = TextRecyclerView(it.data?.Precautions!!)
                     binding.precautionRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-
                 }
                 is NetworkResult.Error -> {
                     progressBar.dismiss()

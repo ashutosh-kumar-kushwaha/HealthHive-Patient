@@ -2,10 +2,7 @@ package ashutosh.healthhive.patient.api
 
 import ashutosh.healthhive.patient.models.*
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.Headers
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface RetrofitAPI {
 
@@ -47,9 +44,9 @@ interface RetrofitAPI {
     @POST("api/auth/signGooglePatient")
     suspend fun signGoogle(@Query("TokenG") token : String) : Response<LoginResponse>
 //
-//    @Headers("isAuthorized: false")
-//    @GET("api/auth/regenerateToken")
-//    suspend fun regenerateAccessToken(@Query("token") refreshToken: String) : Response<LoginResponse>
+    @Headers("isAuthorized: false")
+    @GET("api/auth/regenerateToken")
+    suspend fun regenerateAccessToken(@Query("token") refreshToken: String) : Response<LoginResponse>
 //
 //    //Product
 //

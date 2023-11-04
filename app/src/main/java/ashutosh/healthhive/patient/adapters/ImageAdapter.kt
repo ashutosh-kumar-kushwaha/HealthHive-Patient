@@ -1,16 +1,30 @@
 package ashutosh.healthhive.patient.adapters
 
+import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil.ItemCallback
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ashutosh.healthhive.patient.databinding.ImageItemBinding
-import coil.load
 
-class ImageAdapter(private val images: List<String>) : RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
-    inner class ViewHolder(private val binding: ImageItemBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(image: String){
-            binding.imageView.load(image)
+class ImageAdapter : ListAdapter<Uri, ImageAdapter.ViewHolder>(DiffUtil()) {
+    inner class ViewHolder(private val binding: ImageItemBinding): RecyclerView.ViewHolder(binding.root){
+        fun bind(uri: Uri){
+            binding.imageView.setImageURI(uri)
         }
+    }
+
+    class DiffUtil: ItemCallback<Uri>(){
+        override fun areItemsTheSame(oldItem: Uri, newItem: Uri): Boolean {
+            return oldItem == newItem
+        }
+
+        override fun areContentsTheSame(oldItem: Uri, newItem: Uri): Boolean {
+            return oldItem == newItem
+        }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -18,10 +32,6 @@ class ImageAdapter(private val images: List<String>) : RecyclerView.Adapter<Imag
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(images[position])
-    }
-
-    override fun getItemCount(): Int {
-        return images.size
+        holder.bind(getItem(position))
     }
 }
